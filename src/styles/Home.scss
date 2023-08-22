@@ -1,0 +1,35 @@
+.home{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: minmax(20rem, auto) repeat(auto, auto);
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    .card{
+        // border: 1px solid #e3e3e3;
+        // background-color: #e3e3e3;
+        transition: ease-in-out 0.3s;
+        cursor: pointer;
+        .card-top{
+            img{
+                width:16rem;
+                height: 19rem;
+            }
+        }
+        .card-name, .card-rating{
+            background-color: #242424;
+            color: #e3e3e3;
+            text-align: center;
+            word-wrap: break-word;
+            // display: none;
+            transition: ease-in-out 0.3s;
+        }
+    }
+    .card:hover{
+        box-shadow: 0 0rem 1rem #e3e3e3;
+        scale: 1.1;
+        .card-name, .card-rating{
+            display: block;
+        }
+    }
+}
