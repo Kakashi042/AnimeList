@@ -8,7 +8,9 @@ const Navbar = () => {
       <Link to='/'>
         <h1>AnimeList</h1>
       </Link>
+      <Link to='/info'>
         <p>Info</p>
+      </Link>
     </nav>
   )
 }

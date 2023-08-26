@@ -1,0 +1,17 @@
+.details{
+    max-width: 1280px;
+    margin-inline: auto;
+    .detail-left{
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 5rem;
+        gap: 5rem;
+        img{
+            width:16rem;
+            height: 19rem;
+        }
+        h1{
+            text-transform: uppercase;
+        }
+    }
+}
