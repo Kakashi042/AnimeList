@@ -10,7 +10,9 @@ const Details = () => {
     const dispatch = useDispatch();
 
     useEffect(()=>{
-        dispatch(animeDetails(mal_id))
+        if(!isNaN(mal_id)){
+            dispatch(animeDetails(mal_id))
+        }
     },[])
 
     const anime = useSelector((state)=>state.app.anime.data)
@@ -19,8 +21,7 @@ const Details = () => {
     
   return (
     <div className='details'>
-        {anime &&
-         
+        {anime && 
         (<>
         <div className='detail-left'>
             <img src={`${anime.images.webp.large_image_url}`}/>
@@ -30,9 +31,13 @@ const Details = () => {
             </div>
         </div>
         <div className='detail-right'>
+            <h2>
             SYNOPSIS
+            </h2>
             <hr />
+            <p>
             {anime.synopsis}
+            </p>
         </div>
         </>
         )}

@@ -1,46 +1,49 @@
 import React, { useEffect, useState } from 'react'
-import '../styles/Home.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { readAnime } from '../store/AnimeSlice';
-import { Link } from 'react-router-dom';
-import InfiniteScroll from "react-infinite-scroll-component";
 
-const Home = () => {
+import InfiniteScroll from 'react-infinite-scroll-component';
+import { removeData, searchAnime } from '../store/AnimeSlice'
+
+import { Link, useParams } from 'react-router-dom';
+import '../styles/Home.scss'
+
+const Search = () => {
 
     const dispatch = useDispatch();
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState(2);
+    
+    const {search} = useParams();
+    //dispatch(removeData())
 
     useEffect(()=>{
-        dispatch(readAnime(page))
-        // dispatch(readAnime(2))
+        dispatch(searchAnime({search,page}))
     },[page])
 
-    const fetchData = ()=>{
+    const fetchData = () => {
         setTimeout(()=>{
             setPage(page+1)
-        },1500)
+        },1500) 
     }
-    const allAnime = useSelector((state)=>state.app.allAnime)
 
-    const homePage = useSelector((state)=>state.app.homePage.pagination)
-
-    console.log(allAnime.length)
+    const searchdata = useSelector((state)=>state.app.search)
+    const searchPage = useSelector((state)=>state.app.searchPage.pagination)
+    console.log('Search',searchdata)
     return (
+    
         <div id='home'>
-
-        {allAnime && homePage &&
-            <InfiniteScroll
-            dataLength={allAnime.length} //This is important field to render the next data
+        {searchdata && searchPage &&
+            (<InfiniteScroll
+            dataLength={searchdata.length} //This is important field to render the next data
             next={fetchData}
-            hasMore={homePage.has_next_page}
+            hasMore={searchPage.has_next_page}
             loader={<h4 style={{ display:'block', textAlign: 'center' }}>Loading...</h4>}
             endMessage={
-              <p style={{ textAlign: 'center' }}>
+            <p style={{ textAlign: 'center' }}>
                 <b>Yay! You have seen it all</b>
-              </p>
+            </p>
             }>
             <div className='home'>
-            {allAnime.map((ele,id)=>(
+            {searchdata.map((ele,id)=>(
                 <Link to={`/${ele.mal_id}`}>
                 <div className='card' key={id}>
                     <div className='card-top'>
@@ -55,10 +58,11 @@ const Home = () => {
             ))}
             </div>
             </InfiniteScroll>
-        }
+        )}
 
-        </div>
-    )
+
+    </div>
+  )
 }
 
-export default Home
+export default Search

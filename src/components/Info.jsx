@@ -4,7 +4,7 @@ import '../styles/Info.scss'
 const Info = () => {
   return (
     <div className='info'>
-        <h1>Information</h1>
+        <h1>Description on the project</h1>
         <hr />
         <p>
             I had fun while making the project. Some lorem dipsum blah blah....
@@ -16,7 +16,8 @@ const Info = () => {
             <li>Routing</li>
             <li>Redux state management</li>
             <li>Async Thunk</li>
-            <li>Infinty scroll with async load</li>
+            <li>Infinte scroll with async load for home page and search page</li>
+            <li>Hooks: useState, useEffect, useSelector, useDispatch, useParams</li>
         </ul>
     </div>
   )

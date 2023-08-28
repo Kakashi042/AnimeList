@@ -5,6 +5,16 @@ nav{
     align-items: center;
     justify-content: space-between;
     padding: 0 2rem;
-    background-color: #242424;
+    background-color: #e0e0e0;
     z-index: 99;
+    .head-right{
+        display: flex;
+        gap: 1rem;
+        input{
+            border-radius: 10vw;
+            box-shadow: none;
+            background-color: #e0e0e0;
+            color: #242424;
+        }
+    }
 }
