@@ -15,7 +15,7 @@ const Navbar = () => {
 
   const handleSubmit = (e)=>{
     e.preventDefault();
-    if(search!==prevData){
+    if(search!==prevData && search!==''){
       dispatch(removeData());
       dispatch(searchAnime({search,page}));
       navigate(`/search/${search}`)
@@ -42,8 +42,8 @@ const Navbar = () => {
       </div>
       <div className='head-right'>
       <form onSubmit={handleSubmit}>
-      <input type='text' onChange={(e)=>setSearch(e.target.value)} value={search}></input>
-      <button>submit</button>
+      <input type='search' onChange={(e)=>setSearch(e.target.value)} value={search} placeholder='Search...'></input>
+      <button><img width="20" height="20" src="https://img.icons8.com/ios-filled/20/e0e0e0/search--v1.png" alt="search--v1"/></button>
       </form>
       <Link to='/info'>
         <p>Info</p>

@@ -45,3 +45,113 @@
         }
     }
 }
+
+@media only screen and (max-width:1420px){
+    .home{
+        grid-template-columns: repeat(4, auto);
+    }
+}
+
+@media only screen and (max-width:1150px){
+    .home{
+        gap: 2rem;
+        .card{
+        width: 14rem;
+        height: max-content;
+        .card-top{
+            top: 0;
+            height: 17rem;
+            img{
+                width:14rem;
+                height: 17rem;
+            }
+        }
+        .card-bottom{
+            .card-name, .card-rating{
+                font-size: 0.8rem;
+            }
+        }
+    }
+    }
+}
+
+@media only screen and (max-width:1024px){
+    .home{
+        gap: 2rem;
+        .card{
+        width: 12rem;
+        height: max-content;
+        .card-top{
+            top: 0;
+            height: 15rem;
+            img{
+                width:12rem;
+                height: 15rem;
+            }
+        }
+        .card-bottom{
+            .card-name, .card-rating{
+                font-size: 0.75rem;
+            }
+        }
+    }
+    }
+}
+
+@media only screen and (max-width:900px){
+    .home{
+        grid-template-columns: repeat(3, auto);
+    }
+}
+
+@media only screen and (max-width:660px){
+    .home{
+        gap: 1.5rem;
+        .card{
+        width: 12rem;
+        height: max-content;
+        .card-top{
+            top: 0;
+            height: 15rem;
+            img{
+                width:12rem;
+                height: 15rem;
+            }
+        }
+        .card-bottom{
+            .card-name, .card-rating{
+                font-size: 0.7rem;
+            }
+        }
+    }
+    }
+}
+
+@media only screen and (max-width:630px){
+    .home{
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media only screen and (max-width:425px){
+    .home{
+        grid-template-columns: repeat(1, auto);
+        .card{
+            width: 16rem;
+            height: max-content;
+            .card-top{
+                top: 0;
+                height: 20rem;
+                img{
+                    width:16rem;
+                    height: 20rem;
+                }
+            }
+            .card-bottom{
+                .card-name, .card-rating{
+                    font-size: 1rem;
+                }
+            }
+    }
+}
+}
