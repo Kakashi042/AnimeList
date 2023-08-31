@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.DEV ? '/' : '/react-vite-gh-pages/'}>
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
