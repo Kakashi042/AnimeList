@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-    <BrowserRouter>
+    <BrowserRouter basename='/AnimeList'>
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
